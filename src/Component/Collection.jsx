@@ -35,7 +35,7 @@ function Collection (props){
             }
             </Swiper>
               <div className='bottom wrap'>
-              <div className='box'><video src='/image/new.mp4' autoPlay muted/></div>
+              <div className='box'><video src='/image/new2.mp4' autoPlay muted/></div>
                     <div className='box'><img src='/image/new.gif' alt=''></img></div>
                 </div>
         </div>
