@@ -365,7 +365,7 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 
 .store .menu{width: 10%; color: #666; top: 22.5%; left: 5%;}
 .store .menu .subTitle{margin-bottom: 20px;font: bold 18px/50px 'inherit'; border-bottom: 1px solid #e72819;}
-.store .menu ul>li>button{padding:5px; font-size: 14px; border: none; background-color: transparent;}
+.store .menu ul>li>button{padding:5px; font-size: 14px; border: none; background-color: transparent; color: black;}
 .store .menu ul>li>button:hover{font-weight: bold; color: #e72819;}
 
 
@@ -385,7 +385,16 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 
 @media screen and (max-width: 768px){
     .store{padding: 90px 0;}
-    .store .inner{transform: translateX(10%);}
+    .store .title{margin-bottom: 20px;}
+    .store .menu{position: static; width: 80%; margin: 0 auto;}
+    .store .menu ul {display: flex;}
+    .store .inner{width: 80%;}
+    .store .topBox{display: inherit; }
+    .store .topBox .title{display: none;}
+}
+@media screen and (max-width: 480px){
+    .store .box p{font-size: 12px;}
+    .store .box p:nth-of-type(1){width: 20%;}
 }
 
 
