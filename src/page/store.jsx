@@ -30,8 +30,7 @@ function StoreBox(){
 
     return(
     <section className="store page">
-        <div className="inner">
-            <div className="menu">
+        <div className="menu">
                 <h2 className="title">store</h2>
                 <p className="subTitle">Korea</p>
                 <ul>
@@ -44,6 +43,7 @@ function StoreBox(){
                     <li><button href="#" onClick={()=>{setArea('제주')}}>제주</button></li>
                 </ul>
             </div>
+        <div className="inner">
             <div className="topBox">
                  <p className="title">In Korea</p>
                  <p><span>▶</span>매장검색 <input type="text" placeholder="매장명"/><button type="submit">찾기</button></p>

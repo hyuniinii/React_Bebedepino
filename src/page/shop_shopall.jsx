@@ -1,5 +1,0 @@
-function ShopPage(){
-    return{
-        
-    }
-}

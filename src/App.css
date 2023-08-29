@@ -4,6 +4,7 @@
 a{text-decoration: none; color: #333;}
 ul, ol, li{list-style: none;}
 
+/* default */
 .content{width: 100%; padding: 100px 0;}
 .inner{width:80%; margin: 0 auto;}
 .wrap{display: flex; justify-content: space-between; flex-wrap: wrap;}
@@ -13,19 +14,31 @@ ul, ol, li{list-style: none;}
 .bold{font-weight: bold; margin-right: 10px; margin: 0; height: 0;}
 
 
+@media screen and (max-width: 1200px){
+    .inner{width: 100%;}
+}
+
+
 
 /* header */
-.header{height: 125px; width: 100%; position: fixed; z-index: 5; transition: 0.3s;}
+.header{position: fixed; ;height: 125px; width: 100%;  z-index: 5; transition: 0.3s;}
 .header .navBar{text-align: right; height: 30px;}
 .header .navBar a{padding: 0 10px;text-transform: uppercase; font: 12px/30px 'inherit'; }
 .header .logo{width: 100%; height: 70px; text-align: center; overflow: hidden; }
+.header .logo a{ display: inline-block; line-height: 70px; vertical-align: middle;}
 .header .logo img{height: 30px;}
-.header .gnbWrap .gnb{width: 100%;display: flex; justify-content: center;}
-.header .gnb li{align-self: flex-end;}
-.header .gnb li>a{display: block;padding: 0 20px; font-weight: bold; text-transform: uppercase;transition: 0.3s;}
+.header .gnbWrap .gnb{width: 100%;display: flex; justify-content: center;}  
+.header .gnb li>a{display: block; padding: 0 20px; font-weight: bold; text-transform: uppercase;transition: 0.3s;}
 .header .gnb li>a:hover{color: #e72819;}
 .header .servBar{position: absolute; right: 10%; bottom: 0;}
 .header .servBar a{padding: 10px; font: bold 18px/40px'inherit'; color: #e72819;}
+.header button{
+    display: none;
+    padding: 0 20px;
+    background-color: transparent; border: none; font: bold 24px/100px 'inherit';
+}
+.header .main_toggle{position: absolute; top: 0;}
+
 
 /* header.on */
 .header.on{height: 110px;background-color: #fff; box-shadow: 0 0 20px #999;}
@@ -33,9 +46,38 @@ ul, ol, li{list-style: none;}
 .header.on .logo img{height: 25px; }
 
 
+@media screen and (max-width: 1200px){
+    .header .servBar{right:0}
+}
+@media screen and (max-width: 768px){
+    .header{position: static; height: 100px;}
+    .header .navBar{display: none;}
+    .header .servBar{display: none;}
+    .header .logo{width: 100%; height: 100px;}
+    .header .logo a{line-height: 100px;}
+    .header .logo img{height: 23px;}
+    .header .gnbWrap{
+        display: none;
+        position: absolute; top: 100px; z-index: 5;
+        width: 300px; height: 100vh;
+        background-color: #fff; box-shadow: 0 20px 10px #666;
+        }
+    .header .gnbWrap.show{display: block;}
+    .header .gnbWrap .gnb{display: block; width: 100%;}
+    .header .gnbWrap .gnb li{padding: 20px 10px;}
+    .header button{display: inherit; cursor: pointer;}
+    .header .rightToggle{position: absolute; top: 0; right: 0; }
+    .header .rightToggle .join{display: inline;color: #e72819; padding-right: 0;}
+    .header .rightToggle .like{display: inline;color: #e72819; padding-right: 10px; top: 0;}
+}
+@media screen and (max-width: 480px){
+    .header .servBar{display: none;}
+}
+
 
 /* visual */
 .visual .main img{display: block; width: 100%;}
+
 
 
 
@@ -45,7 +87,7 @@ ul, ol, li{list-style: none;}
 .collection .top .swiper-slide{width: 25%;}
 .collection .top .swiper-slide a img{display: block; width: 100%;}
 .collection .top .swiper-slide span{width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; justify-content: center; text-align: center; color: #fff; font-weight: bold ; transition: 0.2s; opacity: 0;}
-.collection .top .swiper-slide span:hover{opacity: 1;}
+.collection .top .swiper-slide span:hover{opacity: 1; font: bold 1em 'inherit';}
 
 .collection .bottom.wrap{overflow: hidden;}
 .collection .bottom .box:nth-of-type(1){width: 70%;}
@@ -69,43 +111,39 @@ ul, ol, li{list-style: none;}
 .newAndBest .box .item a:hover img{scale: 1; }
 .newAndBest .box .item .info{display: block;width: 100%;text-align: center;}
 .newAndBest .box .item .info .icon a{padding: 0 5px; font-size: 20px; color: #e72819;}
-.newAndBest .box .item .info .itemName{font: 12px/30px 'inherit';}
-.newAndBest .box .item .info .itemPrice{font: bold 12px 'inherit';}
+.newAndBest .box .item .info .itemName{padding-top: 20px; font: 0.7em/2em 'inherit';}
+.newAndBest .box .item .info .itemPrice{font: bold 0.75em/3em 'inherit';}          
+
+
+
+
 
 
 /* banner */
+.banner .pic{width: 100%; overflow: hidden; }
+.banner .pic img{display: block; width: 100%; margin: 0 auto;}
 .viewBox{
     width: 100%;
-    height: 80px;
+    height: 70px;
     overflow: hidden;
 }
 .slideBox{
-    width: 200%;
-    height: 100%;
-    display: flex;
-    animation: flowText 10s linear infinite;
+    height: 100%; display: flex; animation: flowText 5s linear infinite;
 }
-
-@keyframes flowText {
-    0%{transform: translateX(0);}
-    100%{transform: translateX(-20%);}
-}
-
-.leftBox, .rightBox{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
 .slideItem{
-    font-size: 90px;
+    font-size: 3em;
     font-weight: bold;
     color: #111;
     white-space: nowrap;
     text-transform: uppercase;
 }
+
+@keyframes flowText {
+    from{transform: translateX(0);}
+    to{transform: translateX(-20%);}
+}
+
+
 
 /* sns */
 .sns .inner{width: 60%; text-align: center;}
@@ -135,7 +173,9 @@ ul, ol, li{list-style: none;}
 cursor: pointer; transition: 0.3s;}
 .sns button:hover{background-color: #e72819; border: 2px solid #e72819; color: #fff;}
 
-
+@media screen and (max-width: 1200px){
+    .sns .inner{width: 100%;}
+}
 
 
 /* lastIcon */
@@ -162,9 +202,27 @@ footer{padding: 40px 0; border-top: 2px solid #000;}
 footer .wrap .logo{width: 20%;}
 
 footer .info{width: 80%;display: flex; justify-content: space-between;}
+footer .info .part{padding: 0 20px;}
 footer .info .part h3{margin-bottom: 20px;font: bold 15px 'inherit'; text-transform: uppercase;}
 footer .info .part a{display: block; padding: 10px 0; font: 12px 'inherit'; text-transform: uppercase; color: #666;}
 footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
+
+@media screen and (max-width: 768px){
+    footer{padding: 40px;}
+    footer .wrap .logo{width: 100%; display: flex; justify-content: center;}
+    footer .info{width: 100%; margin-top: 50px;}
+}
+@media screen and (max-width: 480px){
+    footer .info{flex-direction: column;}
+    footer .info .part h3{display: block; text-align: center;}
+    footer .info .part a{display: none;}
+    footer .info .part p{display: none;}
+}
+
+
+
+
+
 
 
 /* --------------------------page---------------------------- */
@@ -174,11 +232,15 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 .page .title{text-transform: uppercase; margin-bottom: 50px; font-size: 18px;}
 
 
+@media screen and (max-width: 768px){
+    .page{padding: 0;}
+}
+
 /* menu */
 .page .menu{position: absolute; text-align: left;}
 .page .menu .title{text-transform: uppercase; font-size: 18px; color: #333;}
 
-/* -----------------------common-------------------------- */
+/* --------------------------------------------------------- */
 
 
 
@@ -198,8 +260,8 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 
 
 .shop .visual{height: 500px; margin-bottom: 50px; background: url(../public/image/shop/shop_top_bg.jpg) no-repeat;
-    background-size: cover; background-position-y: 20%;}
-.shop .visual img{display: block; width: 100%; transform: translateY(-20%);}
+    background-size: 100%; background-position-y: 20%; display: flex; flex-direction: column; justify-content: center;}
+.shop .visual img{display: block; width: 100%;}
 .shop .babyKidsBtn{display: flex; justify-content: space-between;}
 .shop .babyKidsBtn button{width: 49%; border: none; cursor: pointer;}
 .shop .babyKidsBtn button img{display: block; width: 100%; transition: 0.3s;}
@@ -238,11 +300,29 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 .shop .newBox .pic:hover img{scale: 1.1;}
 .shop .newBox .info .price{font-weight: bold;color: #555;}
 
+@media screen and (max-width: 768px){
+    .shop .visual{height: 300px;}
+    .shop .menu{display: none;}
+    .shop .babyKidsBtn{display: inherit;}
+    .shop .babyKidsBtn button{width: 100%;}
+    .shop .stylistPick .main{display: none;}
+    .shop .stylistPick .items{width: 100%;}
+}
+
+@media screen and (max-width: 480){
+    .shop .visual{height: 200px;}
+}
+
+
+
+
+
 
 /* lookbook */
 .lookBook{padding-top: 230px;}
 .lookBook .inner{width: 65%;}
-.lookBook .box{ margin-bottom: 100px; position: relative;}
+.lookBook .wrap{justify-content: center;}
+.lookBook .box{ margin-bottom: 100px; position: relative; }
 .lookBook .box .pic{overflow: hidden;}
 .lookBook .box .pic img{display: block; width: 100%; transition: 0.3s;}
 .lookBook .box .info{padding: 15px 30px;background-color: #fff; 
@@ -299,13 +379,31 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 .store .box p:nth-of-type(3){width: 50%;}
 .store .box p:nth-of-type(4){width: 15%;}
 
+@media screen and (max-width: 768px){
+    .store{padding: 90px 0;}
+    .store .inner{transform: translateX(10%);}
+}
+
 
 
 /* about */
-.about .visual{width: 100%; height: 500px;background: url(../public/image/about/about_bg.jpg) no-repeat center ; background-size: cover; background-position-y: 60%; }
-.about .visual img{display: block; height: 500px; padding: 180px; margin: 0 auto;}
+.about .visual{width: 100%; height: 500px; display: flex; flex-direction: column; justify-content: center; background: url(../public/image/about/about_bg.jpg) no-repeat center ; background-size: cover; background-position-y: 60%; }
+.about .visual img{display:block; margin: 0 auto;}
 .about .box{padding: 50px 0;}
-.about .info h3{padding-top: 50px;font: bold 14px/32px 'inherit';}
-.about .info p{font: 14px/32px 'inherit';}
-.about .infoBox{display: flex; justify-content: space-between;}
-.about .infoBox .left,.about .infoBox .right{width: 50%;}
+.about .info h3{padding-top: 50px;font: bold 1.2em/3em 'inherit';}
+.about .info p{font: 0.85em/3em 'inherit';}
+.about .infoBox{display: flex;  justify-content: space-between; }
+/* .about .infoBox h3{font: bold 1.2em/3em 'inherit';}
+.about .infoBox p{font: 0.8em/3em 'inherit';} */
+.about .infoBox .left,.about .infoBox .right{width: 40%; flex-wrap: wrap;}
+
+@media screen and (max-width: 768px){
+    .about .visual{height: 300px;}
+    .about .pic img{width: 100%;}
+    .about .infoBox p{font-size: 0.85em; }
+}
+@media screen and (max-width: 480px){
+    .about .infoBox{display: block;}
+    .about .infoBox .box{padding: 30px 0;}
+    .about .infoBox .left,.about .infoBox .right{width: 100%;}
+}

@@ -40,7 +40,7 @@ function AboutBox(){
                     <div className="left">
                         <div className="box">
                             <h3>Company</h3>
-                            <p>the abcdefg</p>
+                            <p>the bebedepino</p>
                         </div>
                         <div className="box">
                             <h3>Retail enquiries to</h3>

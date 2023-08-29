@@ -21,7 +21,7 @@ function LookbookBox(){
     <section className="lookBook page">
         <div className="inner">
             <div className="menu">
-              <h2 className="title">lookbook</h2>
+              <h2 className="title out">lookbook</h2>
             </div>
             <div className="wrap">
                 {
