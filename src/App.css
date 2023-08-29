@@ -35,7 +35,7 @@ ul, ol, li{list-style: none;}
 .header button{
     display: none;
     padding: 0 20px;
-    background-color: transparent; border: none; font: bold 24px/100px 'inherit';
+    background-color: transparent; border: none; font: bold 20px/100px 'inherit';
 }
 .header .main_toggle{position: absolute; top: 0;}
 
@@ -55,7 +55,7 @@ ul, ol, li{list-style: none;}
     .header .servBar{display: none;}
     .header .logo{width: 100%; height: 100px;}
     .header .logo a{line-height: 100px;}
-    .header .logo img{height: 23px;}
+    .header .logo img{width: 100%;}
     .header .gnbWrap{
         display: none;
         position: absolute; top: 100px; z-index: 5;
@@ -65,12 +65,16 @@ ul, ol, li{list-style: none;}
     .header .gnbWrap.show{display: block;}
     .header .gnbWrap .gnb{display: block; width: 100%;}
     .header .gnbWrap .gnb li{padding: 20px 10px;}
-    .header button{display: inherit; cursor: pointer;}
+    .header button{display: inherit; cursor: pointer; color: #000;}
     .header .rightToggle{position: absolute; top: 0; right: 0; }
     .header .rightToggle .join{display: inline;color: #e72819; padding-right: 0;}
-    .header .rightToggle .like{display: inline;color: #e72819; padding-right: 10px; top: 0;}
+    .header .rightToggle .like{display: inline;color: #e72819; padding: 0 10px 0 10px; top: 0;}
+}
+@media screen and (max-width: 768px){
+    .header .logo img{scale: 80%;}
 }
 @media screen and (max-width: 480px){
+    .header .logo img{scale: 60%;}
     .header .servBar{display: none;}
 }
 
