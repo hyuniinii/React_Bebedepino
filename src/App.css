@@ -12,7 +12,7 @@ ul, ol, li{list-style: none;}
 .title.out{white-space: nowrap; text-indent: 100%; overflow: hidden; height: 0; margin: 0;}
 .txt{margin: 0 0 40px; font: 12px 'inherit'; color: #666; text-align: center;}
 .bold{font-weight: bold; margin-right: 10px; margin: 0; height: 0;}
-
+button{font-family:inherit; color: #000;}
 
 @media screen and (max-width: 1200px){
     .inner{width: 100%;}
@@ -65,7 +65,7 @@ ul, ol, li{list-style: none;}
     .header .gnbWrap.show{display: block;}
     .header .gnbWrap .gnb{display: block; width: 100%;}
     .header .gnbWrap .gnb li{padding: 20px 10px;}
-    .header button{display: inherit; cursor: pointer; color: #000;}
+    .header button{display: inherit; cursor: pointer;}
     .header .rightToggle{position: absolute; top: 0; right: 0; }
     .header .rightToggle .join{display: inline;color: #e72819; padding-right: 0;}
     .header .rightToggle .like{display: inline;color: #e72819; padding: 0 10px 0 10px; top: 0;}
@@ -305,12 +305,16 @@ footer .info .part p{padding: 10px 0; font: 12px 'inherit';}
 .shop .newBox .info .price{font-weight: bold;color: #555;}
 
 @media screen and (max-width: 768px){
+    .shop .inner{width: 90%;}
     .shop .visual{height: 300px;}
     .shop .menu{display: none;}
     .shop .babyKidsBtn{display: inherit;}
     .shop .babyKidsBtn button{width: 100%;}
     .shop .stylistPick .main{display: none;}
     .shop .stylistPick .items{width: 100%;}
+    .shop .newBox{width: 50%; padding: 20px;}
+    .shop .newBox:nth-child(5){display: none;}
+    
 }
 
 @media screen and (max-width: 480){

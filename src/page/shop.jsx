@@ -167,8 +167,7 @@ function ItemBox(props){
     let discount = addComma(e.price * 0.8);
     let number = props.number
     let imgSrc = '/image/shop/stylist'+ e.category + '_' + number +'.jpg'
-/* 
-    console.log(imgSrc) */
+
 
 
     return(
